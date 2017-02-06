@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dissection Puzzles</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- SVG elements don't need to be visible, so we need `width="0" height="0"` as we can't set `display: none` -->
+<svg width="0" height="0">
+    <!-- clipPath elements go inside the defs -->
+    <defs>
+        <!-- Pentagon-to-square puzzle pieces -->
+        <clipPath id="pentagon-1"><path d="m65,235h111.19c-37.07-26.81-74.13-53.62-111.19-80.44v80.44z"/></clipPath>
+        <clipPath id="pentagon-2"><path d="m155.25,214.72c9.6313,6.55,18.732,14.721,28.688,20.281h51.062v-80.469c-26.583,20.062-53.167,40.125-79.75,60.188z"/></clipPath>
+        <clipPath id="pentagon-3"><path d="m151.84,212.25c19.604-14.792,39.208-29.583,58.812-44.375h-120.22c20.469,14.792,40.938,29.583,61.406,44.375z"/></clipPath>
+        <clipPath id="pentagon-4"><path d="m65,149.59c6.0625,4.3542,12.125,8.7083,18.188,13.062,10.604-32.55,21.212-65.098,31.812-97.65h-50v84.594z"/></clipPath>
+        <clipPath id="pentagon-5"><path d="m86.875,163.88h123.44c-33.125-24.5-66.25-49-99.375-73.5-8.0208,24.5-16.042,49-24.062,73.5z"/></clipPath>
+        <clipPath id="pentagon-6"><path d="m112.22,86.375c34.75,25.667,69.5,51.333,104.25,77,6.1771-4.6667,12.354-9.3333,18.531-14v-84.375h-115.78c-2.3333,7.125-4.6667,14.25-7,21.375z"/></clipPath>
+
+        <!-- Hexagon-to-square puzzle pieces -->
+        <clipPath id="hexagon-1"><path d="m65 148.5c16.635 2.2077 33.27 4.4154 49.904 6.623 10.949-13.445 21.897-26.889 32.846-40.334v-50.537h-82.75v84.248z"/></clipPath>
+        <clipPath id="hexagon-2"><path d="m65 234.66c23.002-9.2552 46.004-18.51 69.006-27.766-6.6-15.97-13.2-31.95-19.79-47.93-16.409-2.15-32.814-4.29-49.22-6.43v82.137z"/></clipPath>
+        <clipPath id="hexagon-3"><path d="m117.93 157.59 19.939 47.975 9.8789-3.8801v-80.684z"/></clipPath>
+        <clipPath id="hexagon-4"><path d="m73.498 235.75h74.127v-29.309c-24.709 9.7695-49.418 19.539-74.127 29.309z"/></clipPath>
+        <clipPath id="hexagon-5"><path d="m151.62 93.449c25-9.733 49.99-19.466 74.98-29.199h-74.979v29.199z"/></clipPath>
+        <clipPath id="hexagon-6"><path d="m167.08 91.613c6.4095 16.148 12.819 32.297 19.229 48.445 16.231 2.3359 32.462 4.6719 48.693 7.0078v-81.818c-22.641 8.7884-45.281 17.577-67.922 26.365z"/></clipPath>
+        <clipPath id="hexagon-7"><path d="m151.62 184.85v50.902h83.375v-84.766c-16.434-2.3646-32.868-4.7292-49.303-7.0938-11.357 13.652-22.715 27.305-34.072 40.957z"/></clipPath>
+        <clipPath id="hexagon-8"><path d="m151.75 97.617v80.51c10.275-12.249 20.549-24.499 30.824-36.748l-19.199-48.293-11.625 4.5312z"/></clipPath>
+
+        <!-- Octagon-to-square puzzle pieces -->
+        <clipPath id="octagon-1"><path d="m65.228 64.968c-0.04362 14.66-0.08724 29.319-0.13086 43.979 11.391 5.196 22.783 10.392 34.174 15.588l72.646-27.133c4.8965-10.82 9.793-21.639 14.689-32.459-40.46 0.0085-80.919 0.01693-121.38 0.02539z"/></clipPath>
+        <clipPath id="octagon-2"><path d="m64.873 234.98c14.76 0.007 29.521 0.0143 44.281 0.0215l15.59-34.176c-9.0443-24.217-18.089-48.434-27.133-72.65-10.841-4.9447-21.682-9.8893-32.523-14.834-0.07161 40.546-0.14323 81.092-0.21484 121.64z"/></clipPath>
+        <clipPath id="octagon-3"><path d="m128.38 202.47l-14.832 32.518c40.525 0.0228 81.049 0.0456 121.57 0.0684-0.0228-14.693-0.0456-29.385-0.0684-44.078-11.342-5.2136-22.684-10.427-34.025-15.641-24.216 9.0443-48.432 18.089-72.648 27.133z"/></clipPath>
+        <clipPath id="octagon-4"><path d="m175.56 99.058c9.0449 24.219 18.09 48.439 27.135 72.658l32.361 14.877c0.0228-40.524 0.0456-81.048 0.0684-121.57-14.71-0.02539-29.419-0.05078-44.129-0.07617-5.1452 11.371-10.29 22.742-15.436 34.113z"/></clipPath>
+        <clipPath id="octagon-5"><path d="m101.77 127.87l26.316 70.461c23.486-8.7721 46.973-17.544 70.459-26.316-8.7721-23.486-17.544-46.973-26.316-70.459-23.486 8.7715-46.973 17.543-70.459 26.314z"/></clipPath>
+    </defs>
+</svg>
+
+<h2 class="team-header">Awesome Team</h2>
+
+<div class="team-member">
+    <div class="clip-container clip-pentagon">
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+    </div>
+    <div class="team-member-name">Elizabeth</div>
+    <div class="team-member-position">Project Leader</div>
+</div>
+
+<div class="team-member">
+    <div class="clip-container clip-hexagon">
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+    </div>
+    <div class="team-member-name">Daniel</div>
+    <div class="team-member-position">Senior Designer</div>
+</div>
+
+<div class="team-member">
+    <div class="clip-container clip-octagon">
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+        <div class="clip"></div>
+    </div>
+    <div class="team-member-name">Alice</div>
+    <div class="team-member-position">Developer</div>
+</div>
+
+<script>
+    // From: http://stackoverflow.com/a/33152824/4908989
+    // detect IE8 and above, and edge
+    if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+        document.body.className = 'ie-edge';
+    }
+</script>
+</body>
+</html>

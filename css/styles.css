@@ -1,0 +1,292 @@
+/* Basic styles */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #07162B;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+svg {
+  display: block;
+}
+
+/* Team section */
+.team-header {
+  position: relative;
+  margin-top: 50px;
+  font-size: 40px;
+  font-variant: small-caps;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.team-header:before, .team-header:after {
+  position: absolute;
+  content: '';
+  left: 50%;
+  width: 200px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.team-header:before {
+  top: -10px;
+}
+
+.team-header:after {
+  bottom: -10px;
+}
+
+.team-member {
+  display: inline-block;
+  margin: 25px 20px 25px;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.team-member:hover {
+  background-color: rgba(202, 41, 100, 0.8);
+}
+
+.team-member:hover .clip {
+  -webkit-transform: translate(0, 0) !important;
+      -ms-transform: translate(0, 0) !important;
+          transform: translate(0, 0) !important;
+}
+
+.team-member-name {
+  position: relative;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.team-member-name:before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  bottom: -10px;
+  width: 50px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.team-member-position {
+  margin: 20px 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-variant: small-caps;
+}
+
+/* Basic styles for pieces */
+.clip-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.clip {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* Pieces transform */
+.clip-pentagon .clip {
+  background-image: url("../img/face-1.jpg");
+}
+
+.clip-pentagon .clip:nth-child(1) {
+  -webkit-clip-path: url(/#pentagon-1);
+          clip-path: url(/#pentagon-1);
+  -webkit-transform: translate(30px, 60px) scaleY(-1);
+      -ms-transform: translate(30px, 60px) scaleY(-1);
+          transform: translate(30px, 60px) scaleY(-1);
+}
+
+.clip-pentagon .clip:nth-child(2) {
+  -webkit-clip-path: url(/#pentagon-2);
+          clip-path: url(/#pentagon-2);
+  -webkit-transform: translate(141px, 23px) rotate(143.5deg);
+      -ms-transform: translate(141px, 23px) rotate(143.5deg);
+          transform: translate(141px, 23px) rotate(143.5deg);
+}
+
+.clip-pentagon .clip:nth-child(3) {
+  -webkit-clip-path: url(/#pentagon-3);
+          clip-path: url(/#pentagon-3);
+  -webkit-transform: translate(-70px, -79px) rotate(-35.5deg);
+      -ms-transform: translate(-70px, -79px) rotate(-35.5deg);
+          transform: translate(-70px, -79px) rotate(-35.5deg);
+}
+
+.clip-pentagon .clip:nth-child(4) {
+  -webkit-clip-path: url(/#pentagon-4);
+          clip-path: url(/#pentagon-4);
+  -webkit-transform: translate(-144px, 59px) scaleX(-1);
+      -ms-transform: translate(-144px, 59px) scaleX(-1);
+          transform: translate(-144px, 59px) scaleX(-1);
+}
+
+.clip-pentagon .clip:nth-child(5) {
+  -webkit-clip-path: url(/#pentagon-5);
+          clip-path: url(/#pentagon-5);
+  -webkit-transform: translate(35px, -43.2px);
+      -ms-transform: translate(35px, -43.2px);
+          transform: translate(35px, -43.2px);
+}
+
+.clip-pentagon .clip:nth-child(6) {
+  -webkit-clip-path: url(/#pentagon-6);
+          clip-path: url(/#pentagon-6);
+  -webkit-transform: translate(0px, 126px) rotate(-36.5deg);
+      -ms-transform: translate(0px, 126px) rotate(-36.5deg);
+          transform: translate(0px, 126px) rotate(-36.5deg);
+}
+
+.clip-hexagon .clip {
+  background-image: url("../img/face-2.jpg");
+}
+
+.clip-hexagon .clip:nth-child(1) {
+  -webkit-clip-path: url(/#hexagon-1);
+          clip-path: url(/#hexagon-1);
+  -webkit-transform: translate(26px, -114px) rotate(-129.5deg);
+      -ms-transform: translate(26px, -114px) rotate(-129.5deg);
+          transform: translate(26px, -114px) rotate(-129.5deg);
+}
+
+.clip-hexagon .clip:nth-child(2) {
+  -webkit-clip-path: url(/#hexagon-2);
+          clip-path: url(/#hexagon-2);
+  -webkit-transform: translate(-134px, -18px) rotate(-129deg);
+      -ms-transform: translate(-134px, -18px) rotate(-129deg);
+          transform: translate(-134px, -18px) rotate(-129deg);
+}
+
+.clip-hexagon .clip:nth-child(3) {
+  -webkit-clip-path: url(/#hexagon-3);
+          clip-path: url(/#hexagon-3);
+  -webkit-transform: translate(-26px, -70px) rotate(51deg);
+      -ms-transform: translate(-26px, -70px) rotate(51deg);
+          transform: translate(-26px, -70px) rotate(51deg);
+}
+
+.clip-hexagon .clip:nth-child(4) {
+  -webkit-clip-path: url(/#hexagon-4);
+          clip-path: url(/#hexagon-4);
+  -webkit-transform: translate(112px, 5.5px) rotate(50.5deg);
+      -ms-transform: translate(112px, 5.5px) rotate(50.5deg);
+          transform: translate(112px, 5.5px) rotate(50.5deg);
+}
+
+.clip-hexagon .clip:nth-child(5) {
+  -webkit-clip-path: url(/#hexagon-5);
+          clip-path: url(/#hexagon-5);
+  -webkit-transform: translate(-109px, -2px) rotate(50.5deg);
+      -ms-transform: translate(-109px, -2px) rotate(50.5deg);
+          transform: translate(-109px, -2px) rotate(50.5deg);
+}
+
+.clip-hexagon .clip:nth-child(6) {
+  -webkit-clip-path: url(/#hexagon-6);
+          clip-path: url(/#hexagon-6);
+  -webkit-transform: translate(138px, 20.5px) rotate(-129deg);
+      -ms-transform: translate(138px, 20.5px) rotate(-129deg);
+          transform: translate(138px, 20.5px) rotate(-129deg);
+}
+
+.clip-hexagon .clip:nth-child(7) {
+  -webkit-clip-path: url(/#hexagon-7);
+          clip-path: url(/#hexagon-7);
+  -webkit-transform: translate(-24px, 116.5px) rotate(-129.5deg);
+      -ms-transform: translate(-24px, 116.5px) rotate(-129.5deg);
+          transform: translate(-24px, 116.5px) rotate(-129.5deg);
+}
+
+.clip-hexagon .clip:nth-child(8) {
+  -webkit-clip-path: url(/#hexagon-8);
+          clip-path: url(/#hexagon-8);
+  -webkit-transform: translate(28px, 74px) rotate(51deg);
+      -ms-transform: translate(28px, 74px) rotate(51deg);
+          transform: translate(28px, 74px) rotate(51deg);
+}
+
+.clip-octagon .clip {
+  background-image: url("../img/face-3.jpg");
+}
+
+.clip-octagon .clip:nth-child(1) {
+  -webkit-clip-path: url(/#octagon-1);
+          clip-path: url(/#octagon-1);
+  -webkit-transform: translate(-135px, 0px) rotate(110.5deg);
+      -ms-transform: translate(-135px, 0px) rotate(110.5deg);
+          transform: translate(-135px, 0px) rotate(110.5deg);
+}
+
+.clip-octagon .clip:nth-child(2) {
+  -webkit-clip-path: url(/#octagon-2);
+          clip-path: url(/#octagon-2);
+  -webkit-transform: translate(0px, 135px) rotate(110.5deg);
+      -ms-transform: translate(0px, 135px) rotate(110.5deg);
+          transform: translate(0px, 135px) rotate(110.5deg);
+}
+
+.clip-octagon .clip:nth-child(3) {
+  -webkit-clip-path: url(/#octagon-3);
+          clip-path: url(/#octagon-3);
+  -webkit-transform: translate(135px, 0px) rotate(110.5deg);
+      -ms-transform: translate(135px, 0px) rotate(110.5deg);
+          transform: translate(135px, 0px) rotate(110.5deg);
+}
+
+.clip-octagon .clip:nth-child(4) {
+  -webkit-clip-path: url(/#octagon-4);
+          clip-path: url(/#octagon-4);
+  -webkit-transform: translate(0px, -135px) rotate(110.5deg);
+      -ms-transform: translate(0px, -135px) rotate(110.5deg);
+          transform: translate(0px, -135px) rotate(110.5deg);
+}
+
+.clip-octagon .clip:nth-child(5) {
+  -webkit-clip-path: url(/#octagon-5);
+          clip-path: url(/#octagon-5);
+  -webkit-transform: translate(0px, 0px) rotate(41deg);
+      -ms-transform: translate(0px, 0px) rotate(41deg);
+          transform: translate(0px, 0px) rotate(41deg);
+}
+
+/* Fallback for Internet Explorer and Edge */
+.ie-edge .clip {
+  display: none;
+}
+
+.ie-edge .clip:first-child {
+  display: block;
+  -webkit-transform: translate(0, 0) !important;
+      -ms-transform: translate(0, 0) !important;
+          transform: translate(0, 0) !important;
+}
